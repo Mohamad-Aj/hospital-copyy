@@ -1,0 +1,111 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(-45deg, #d4d4d4, #ffffff, #23a6d5, #0298EC);
+	background-size: 400% 400%;
+	animation: anim 8s ease infinite;
+	height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+    margin-top:0vh;
+}
+
+
+.container_fluid {
+    width: 100%;
+    padding: 0 16px;
+}
+
+main {
+    min-height: 200px;
+    color: white;
+    position: fixed;
+}
+
+
+main {
+    min-height: 200px;
+    color: white;
+}
+
+main img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main .container {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px;
+}
+
+@keyframes anim {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+    
+}
+
+
+
+.footer1{
+    color:#777;
+    left: 0;
+    /* top: 0; */
+    bottom: 0;
+    /* right: 0px; */
+}
+
+
+/* style the notes */
+
+
+#app{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,350px);
+    gap: 100px;
+    padding: 24px;
+}
+
+.note{
+    height:400px;
+    width: 400px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.15);
+    resize: none;
+    font-size: 32px;
+}
+
+.add-note{
+    height:400px;
+    width: 400px;
+    border: none;
+    outline: none;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    font-size: 120px;
+    cursor: pointer;
+    transition: backgorund 0.2s;
+}
+
+.add-note:hover{
+    background-color: rgba(0,0,0,0.2);
+
+}

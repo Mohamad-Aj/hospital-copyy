@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style/register.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="container">
+        <section class="wrapper">
+            <header>
+                <h1>Sign up</h1>
+                <h2>Create a new account</h2>
+            </header>
+            <section class="main-content">
+                <form action="/register" method="POST">
+                    <input type="text" name="fullname" id="fullname" placeholder="Full Name" required>
+                    <div class="line"></div> 
+                    <input type="date" name="birthdate" id="birthdate" required>
+                    <div class="line"></div> 
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <div class="line"></div>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <div class="line"></div>
+                    <input type="text" name="id1" id="id1" placeholder="ID" required>
+                    <div class="line"></div>
+                    <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone Number" required>
+                    <div class="line"></div>
+
+                     <select name="gender" id="selectbox" required>
+                        <option disabled selected>Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                     </select>
+                     <div class="line"></div>
+                    <button type="submit"> <a href="/login" style="text-decoration:none; color:white;">Sign up</a></button>
+                </form>
+</body>
+
+</html>

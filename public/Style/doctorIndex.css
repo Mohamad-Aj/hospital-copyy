@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(-45deg, #d4d4d4, #ffffff, #23a6d5, #0298EC);
+	background-size: 400% 400%;
+	animation: anim 8s ease infinite;
+	height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+    margin-top:0vh;
+}
+
+header .container {
+    padding: 32px;
+    width: 100%;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    position: absolute;
+}
+
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    color: #000000;
+    font-size: large;
+    font-family: sans-serif;
+    position: absolute;
+}
+
+#welcome{
+    color: #0298EC;
+    margin-left: 70px;
+    margin-right: 1590px;
+}
+
+
+
+@keyframes anim {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+    
+}
+
+.boxs {
+    /* position: fixed; */
+
+    height: 210px;
+    background: white;
+    color: #000000;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 1px 10px 13px -7px #000000, 8px 3px 15px 5px rgba(5, 4, 4, 0);
+    z-index: 99;
+}
+
+.container{
+    margin-top: 90px;
+    display: flex;
+    padding: 150px;
+    white-space: nowrap;
+    flex-wrap: wrap;
+    position: static;
+}
+
+.box1 {
+        /* margin-top: 200px;
+        margin-left: 100px;
+        margin-right: 100px; */
+    margin-left: 250px;
+    width: 20%;
+    position: relative;
+    border: solid 4px #0298EC;
+}
+
+.box2 {
+    /* margin-top: 200px;
+    margin-left: 100px;
+    margin-right: 100px; */
+    width: 20%;
+    position: relative;
+    border: solid 4px #0298EC;
+}
+
+.box3 {
+    /* margin-top: 200px;
+    margin-left: 100px;
+    margin-right: 100px; */
+    width: 20%;
+    position: relative;
+    border: solid 4px #0298EC;
+}
+
+.box4 {
+    margin-left: 380px;
+    width: 20%;
+    position: relative;
+    border: solid 4px #0298EC;
+}
+
+.box5 {
+    width: 20%;
+    position: relative;
+    border: solid 4px #0298EC;
+}
+
+
+.boxs button{
+    border: #fff;
+    background-color: white;
+    cursor:grab;
+    text-align: center;
+}
+.box1 img{
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+}
+
+.box2 img{
+    margin-top: 12px;
+    margin-bottom: 23px;
+
+}
+.box3 img{
+    margin-top: 8px;
+    margin-bottom: 12px;
+
+}
+
+.box4 img{
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.box5 img{
+    margin-top: 10px;
+}
+
+
+/* circle of the tab */
+.footer1{
+    color:#777;
+    margin-top: 1000px;
+    margin-left: 1000px;
+    position: fixed;
+}
