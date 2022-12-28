@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(-45deg, #d4d4d4, #ffffff, #23a6d5, #0298EC);
+	background-size: 400% 400%;
+	animation: anim 8s ease infinite;
+	height: 100vh;
+    font-family: monospace;
+    margin: 0;
+    margin-top:0vh;
+}
+
+
+@keyframes anim {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+
+.cont{
+    padding-top: 8px;
+    margin-left: 500px;
+    /* position: fixed; */
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 220, 188);
+    margin-top: 100px;
+    max-width: 550px;
+    display: flex;
+    /* padding: 150px; */
+    white-space: nowrap;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    /* position: static; */
+}
+
+hr{
+    /* position: relative; */
+    margin: 8px;
+    margin-left: 10px;
+    width: 540px;
+    /* margin-left: 35px; */
+}
+
+h1{
+    font-family: monospace;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.Box button{
+    /* position: relative; */
+    background: #252923;
+    border-radius: 40px;
+    border: #99999955;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    display: block;
+    width: 150px;
+    height: 30px;
+    outline: none;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+.Box{
+    margin-left: 40px;
+    border-radius: 8px;
+    max-height:40px ;
+    border: #0298EC;
+    display: flex;
+    font-size: 20px;
+    /* position: relative; */
+    /* margin-bottom: 4px; */
+   /* background-color: #0298E;  */
+   /* text-align: center; */
+   /* position: relative; */
+}

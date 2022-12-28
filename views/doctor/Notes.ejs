@@ -22,7 +22,7 @@
             <ul class="nav " style="color: white;">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
-                        href="/doctor/Index/<%= id %>">Home</a>
+                        href="/doctor/Index/<%= id  %>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
@@ -30,9 +30,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
                 </li>
-                <form action="/logout" method="POST">
+                <form action="/doctor/LogOut" method="POST">
                     <li class="nav-item">
-                        <a class="nav-link" href="/logout" style="font-size: 24px; color: #0298EC;">Logout</a>
+                        <button class="nav-link"
+                            style="font-size: 24px; background-color: white;border: none; color: #0298EC;">Logout
+                        </button>
                     </li>
                 </form>
             </ul>
@@ -54,26 +56,31 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
-                                href="/doctor/Index">Home</a>
+                                href="/doctor/<%= id  %>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Patients/<%= id %> "
+                            <a class="nav-link" href="/doctor/Patients/<%= id  %>"
                                 style="font-size: 24px; color: #0298EC;">Patients List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Appointments/<%= id %>"
+                            <a class="nav-link" href="/doctor/Appointments/<%= id  %> "
                                 style="font-size: 24px; color: #0298EC;">Appointments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Notes/<%= id %>"+newUser.id style="font-size: 24px; color: #0298EC;">Notes</a>
+                            <a class="nav-link" href="/doctor/Notes/<%= id  %> "
+                                style="font-size: 24px; color: #0298EC;">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Profile/<%= id %>"
+                            <a class="nav-link" href="/doctor/Profile/<%= id %> "
                                 style="font-size: 24px; color: #0298EC;">Profile</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/logout" style="font-size: 24px; color: #0298EC;">Logout</a>
-                        </li>
+                        <form action="/doctor/LogOut" method="POST">
+                            <li class="nav-item">
+                                <button class="nav-link"
+                                    style="font-size: 24px;background-color: white;border: none; color: #0298EC;">Logout
+                                </button>
+                            </li>
+                        </form>
 
                     </ul>
 
@@ -81,7 +88,6 @@
             </div>
         </div>
     </nav>
-
 
     <!-- note app -->
     <div id="app">

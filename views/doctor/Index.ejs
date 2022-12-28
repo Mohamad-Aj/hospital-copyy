@@ -18,28 +18,32 @@
 <body>
     <nav class="navbar navbar-dark bg-white fixed-top">
         <div class="container-fluid">
-                <ul class="nav " style="color: white;" >
+            <ul class="nav " style="color: white;">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
+                        href="/doctor/Index/<%= id  %>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
+                </li>
+                <form action="/doctor/LogOut" method="POST">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;" href="/doctor/Index/<%= id  %>">Home</a>
+                        <button class="nav-link" style="font-size: 24px; background-color: white;border: none; color: #0298EC;">Logout
+                        </button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout" style="font-size: 24px; color: #0298EC;">Logout</a>
-                    </li>
-                </ul>
+                </form>
+            </ul>
             <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
-            <button class="navbar-toggler" style="background: #0298EC;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar">
+            <button class="navbar-toggler" style="background: #0298EC;" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
 
-            
+
             <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -49,59 +53,67 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;" href="/doctor/<%= id  %>">Home</a>
+                            <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
+                                href="/doctor/<%= id  %>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Patients/<%= id  %>" style="font-size: 24px; color: #0298EC;">Patients List</a>
+                            <a class="nav-link" href="/doctor/Patients/<%= id  %>"
+                                style="font-size: 24px; color: #0298EC;">Patients List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Appointments/<%= id  %> " style="font-size: 24px; color: #0298EC;">Appointments</a>
+                            <a class="nav-link" href="/doctor/Appointments/<%= id  %> "
+                                style="font-size: 24px; color: #0298EC;">Appointments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Notes/<%= id  %> " style="font-size: 24px; color: #0298EC;">Notes</a>
+                            <a class="nav-link" href="/doctor/Notes/<%= id  %> "
+                                style="font-size: 24px; color: #0298EC;">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Profile/<%= id %> " style="font-size: 24px; color: #0298EC;">Profile</a>
+                            <a class="nav-link" href="/doctor/Profile/<%= id %> "
+                                style="font-size: 24px; color: #0298EC;">Profile</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/logout" style="font-size: 24px; color: #0298EC;">Logout</a>
-                        </li>
+                        <form action="/doctor/LogOut" method="POST">
+                            <li class="nav-item">
+                                <button class="nav-link" style="font-size: 24px;background-color: white;border: none; color: #0298EC;">Logout
+                                </button>
+                            </li>
+                        </form>
 
                     </ul>
-                    
+
                 </div>
             </div>
         </div>
     </nav>
-        <div class="container">
-            <!-- <div class="box side-box"><img src="/images/building.jpg" alt=""></div> -->
-            <!-- <div class="box side-box1"></div> -->
-            <div class="boxs box1"><button id="Appointments"><a href="/doctor/Appointments/<%= id  %>"><img
+    <div class="container">
+        <!-- <div class="box side-box"><img src="/images/building.jpg" alt=""></div> -->
+        <!-- <div class="box side-box1"></div> -->
+        <div class="boxs box1"><button id="Appointments"><a href="/doctor/Appointments/<%= id  %>"><img
                         src="/images/appointments.png" height="130" alt="appointments"></a>
-                    <br>
-                    <h2>Appointments</h2>
-                </button></div>
-            <div class="boxs box2"><button id="PatientsList"><a href="/doctor/Patients/<%= id  %>"><img src="/images/patientsList.png"
-                        height="115" alt="patientsList"></a><br>
-                    <h2>Patients</h2>
-                </button></div>
-            <div class="boxs box3"><button id="profile"><a href="/doctor/Profile/<%= id  %>"><img src="/images/profile.jpg"
+                <br>
+                <h2>Appointments</h2>
+            </button></div>
+        <div class="boxs box2"><button id="PatientsList"><a href="/doctor/Patients/<%= id  %>"><img
+                        src="/images/patientsList.png" height="115" alt="patientsList"></a><br>
+                <h2>Patients</h2>
+            </button></div>
+        <div class="boxs box3"><button id="profile"><a href="/doctor/Profile/<%= id  %>"><img src="/images/profile.jpg"
                         height="130" alt=""></a>
-                    <br>
-                    <h2>Profile</h2>
-                </button></div>
-            <div class="boxs box4"><button id="notepad"><a href="/doctor/Notes/<%= id  %> " ><img src="/images/notepad.png" height="130"
+                <br>
+                <h2>Profile</h2>
+            </button></div>
+        <div class="boxs box4"><button id="notepad"><a href="/doctor/Notes/<%= id  %> "><img src="/images/notepad.png"
+                        height="130" width="130" alt=""></a><br>
+                <h2>Notes</h2>
+            </button></div>
+        <div class="boxs box5"><button id="guide"><a href="/Guide"><img src="/images/user-guide.png" height="130"
                         width="130" alt=""></a><br>
-                    <h2>Notes</h2>
-                </button></div>
-            <div class="boxs box5"><button id="guide"><a href="/Guide"><img src="/images/user-guide.png" height="130"
-                        width="130" alt=""></a><br>
-                    <h2>Guide</h2>
-            </div>
-            <!-- <div class="box box6"></div> -->
-
+                <h2>Guide</h2>
         </div>
-        <!-- <img src="images/alex-negroe-3XoA5WwD4ig-unsplash.jpg" alt=""> -->
+        <!-- <div class="box box6"></div> -->
+
+    </div>
+    <!-- <img src="images/alex-negroe-3XoA5WwD4ig-unsplash.jpg" alt=""> -->
     <div class="footer1">
         <footer>Copyright &copy; MA Hospital</footer>
     </div>

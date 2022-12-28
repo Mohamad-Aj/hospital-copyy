@@ -19,6 +19,12 @@ const Nurse = require('../models/nurse')
 // router.get('/' , (req,res)=>{
 //     res.render('nurse/Index')
 // })
+
+
+router.route('/register').get((req, res) => {
+    res.render('nurse/register')
+})
+
 router.get('/login', (req, res) => {
     res.render('nurse/login')
 })
@@ -29,13 +35,14 @@ router.get('/:id', (req, res) => {
 })
 
 
+
 router.route('/login').post( async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     try {
         User.findOne({ email: email })
             .then((user) => {
-                if (!user) { res.redirect('/error').json({ mssg: "User does not exist" }) }
+                if (!user) { res.redirect('/login404').json({ mssg: "User does not exist" }) }
                 bcrypt.compare(password, user.password, (err, result) => {
                     if (err) {
                         res.json({
@@ -47,7 +54,7 @@ router.route('/login').post( async (req, res) => {
                             if(result) { res.redirect(`/nurse/${user.id}`)
                         res.end()}
                         else{
-                            res.redirect('/error');
+                            res.redirect('/login404');
                         }
                                
                         });
@@ -56,19 +63,17 @@ router.route('/login').post( async (req, res) => {
             })
     }
     catch {
-        res.redirect('/error')
+        res.redirect('/login404')
     }
 })
 
 
-router.get('/logout', function (req, res, next) {
-    req.logout(function (err) {
-        if (err) { return next(err); }
-        req.session.destroy(()=>{
-            res.redirect('/login');
-          });
-    });
-});
+router.route('/LogOut').post((req,res)=>{
+    console.log('loggin out')
+    req.session.destroy();
+    session = req.session
+    res.redirect('/HomePage')
+})
 
 
 module.exports = router;
