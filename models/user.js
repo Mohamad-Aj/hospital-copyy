@@ -46,6 +46,9 @@ const UserSchema = new mongoose.Schema({
     },
     patients:{
         type:Array
+    },
+    OrderedCard:{
+        type:Boolean
     }
 }, { timestamps: true });
 

@@ -82,6 +82,7 @@ main .container {
 }
 
 .note{
+    background-color: #ffffff;
     height:400px;
     width: 400px;
     box-sizing: border-box;
@@ -90,7 +91,7 @@ main .container {
     border-radius: 10px;
     box-shadow: 0 0 7px rgba(0,0,0,0.15);
     resize: none;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .add-note{

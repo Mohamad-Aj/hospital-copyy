@@ -1,75 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="/Style/Doctors.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
+    <header>
+        <script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+        <script src="https://www.negishim.com/accessibility/accessibility_pro.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        accessibility_rtl = true;
+        pixel_from_side = 20;
+        pixel_from_start = 20;
+    </script>
+    
+      </header>
+      <nav class="navbar navbar-dark bg-white fixed-top">
+        <div class="container-fluid">
+          <ul class="nav " style="color: white;">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
+                href="/patient/Index/<%= result.id %> ">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Appointments/<%= result.id %> "
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Appointments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Doctors/<%= result.id %>"
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Doctors/Nurses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Medicine/<%= result.id %>"
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Medicine</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Profile/<%= result.id %>"
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Guide/<%= result.id %> "
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Guide</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Rate/<%= result.id %> "
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Rate Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/patient/Lab/<%= result.id %> "
+                style="font-size: 18px; margin-top:6px; color: #0298EC;">Lab Results</a>
+            </li>
+            <form action="/patient/LogOut" method="POST">
+              <li class="nav-item">
+                <button class="nav-link"
+                  style="margin-top: 5.9px; height: 20px; width: 20px; font-size: 18px;background-color: white;border: none; color: #0298EC;">Logout
+                </button>
+              </li>
+            </form>
+          </ul>
+          <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
+        </div>
+      </nav>
+  <div class="container marketing">
 
-    <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <!-- JavaScript Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/Style/doctorAppointment.css">
-        <title>Document</title>
-    </head>
+    <div class="row">
+      <h1 style="text-align:center; padding:30px;">Doctors</h1>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/d1.jpg" alt="">
 
-    <body>
-        <nav class="navbar navbar-dark bg-white fixed-top">
-            <div class="container-fluid">
-                <ul class="nav " style="color: white;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
-                            href="/patient/Index/<%= result.id %> ">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/Appointments/<%= result.id %> "
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Appointments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/Doctors/<%= result.id %>"
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Doctors/Nurses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/Medicine/<%= result.id %>"
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Medicine</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/Profile/<%= result.id %>"
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/Guide/<%= result.id %>"
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/patient/LogOut"
-                            style="font-size: 18px; margin-top:6px; color: #0298EC;">Logout</a>
-                    </li>
-                </ul>
-                <!-- <a class="navbar-brand" href="#">Offcanvas navbar</a> -->
-            </div>
-        </nav>
+        <h2 class="fw-normal">Noah Anderson</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <p>Specializes in: Eyes</p>
+        <hr>
+        <p>Noah is a Harvard graduate, he graduated at the age of 27 and immediately started applying for jobs all over the place,the MA saw his student record very impressing and took him in, Noah has helped many people pass through hard times with his techniques and his slight hand and his friendly character, he did many surgeries all of them were successful and he was picked as doctor of the year in MA last year.</p>
+      </div><!-- /.col-lg-4 -->
 
-        <div class="cont">
-        </div> 
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/d2.jpg" alt="">
 
-        <!-- <script src="/JS/deleteAppoint.js"></script> -->
-    </body>
+        <h2 class="fw-normal">Nella Atkinson</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p>Specializes in: Bones and Fractures</p>
+        <hr>   
+        <p></p>
+      </div>
 
-    </html>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/d3.jpg" alt="">
+        <h2 class="fw-normal">Henry Alister</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star"></span>
+        <p></p>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/d4.jpg" alt="">
+        <h2 class="fw-normal">Allison Marks</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <p></p>
+      </div>
+
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/d5.jpg" alt="">
+
+        <h2 class="fw-normal">Aviv Mark</h2>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star "></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <p></p>
+      </div>
+
+
+
+      <div class="row">
+        <h1 style="text-align:center; padding:30px;">Nurses</h1>
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/n1.jpg" alt="">
+
+          <h2 class="fw-normal">Emily Banks</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <p></p>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/n2.jpg" alt="">
+
+          <h2 class="fw-normal">Mia Robinson</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <p></p>
+        </div>
+
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/n3.jpg" alt="">
+          <h2 class="fw-normal">Kenzie Cavel</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <p></p>
+        </div>
+
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="130" height="160" src="/images/n4.jpg" alt="">
+          <h2 class="fw-normal">Lile Norman</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <p></p>
+        </div>
+
+        <div class="col-lg-4">
+          <img class="bd-placeholder-img rounded-circle" width="140" height="150" src="/images/n5.jpg" alt="">
+
+          <h2 class="fw-normal">Amber Anson</h2>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <p></p>
+        </div>
+      </div>
+     </div>
+  </div>
 </body>
-
-</html>

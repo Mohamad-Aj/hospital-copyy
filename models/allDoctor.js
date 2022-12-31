@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 const allDoctorSchema = new mongoose.Schema({
     Name: {
         type: String
+    },
+    email:{
+        type:String
     }
 })
 

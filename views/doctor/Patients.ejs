@@ -104,7 +104,7 @@
             <% if(patients.length> 0){ %>
                 <%patients.forEach(patient=>{ %>
                     <form action="/doctor/patients/<%= result.id%>/<%=patient[0]%>  " method="POST">
-                        <div class="Box">Name : <%= patient[0] %>, Age:<%= patient[1] %>, ID: <%= patient[2] %>
+                        <div class="Box" style="margin-left:14px;">Name : <%= patient[0] %>, Age:<%= patient[1] %>, ID: <%= patient[2] %>
                         </div>
                         <hr>
                     </form>

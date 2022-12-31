@@ -254,10 +254,11 @@ header .container {
 }
 
 .container{
-    margin-top: 90px;
+    margin: 70px;
     display: flex;
     max-height: fit-content;
     padding: 150px;
+    /* max-height: 600px; */
     white-space: nowrap;
     flex-wrap: wrap;
     position: static;
@@ -329,9 +330,3 @@ header .container {
 
 
 /* circle of the tab */
-.footer1{
-    color:#777;
-    margin-top: 1000px;
-    margin-left: 1000px;
-    position: fixed;
-}

@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta http-equiv="Pragma" content="no-cache">
-     <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Style/doctorAppointment.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-    crossorigin="anonymous"></script>
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
@@ -23,7 +23,7 @@
             <ul class="nav " style="color: white;">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
-                        href="/doctor/Index/<%= result.id  %>">Home</a>
+                        href="/doctor/Index/<%= id  %>">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
@@ -33,7 +33,8 @@
                 </li>
                 <form action="/doctor/LogOut" method="POST">
                     <li class="nav-item">
-                        <button class="nav-link" style="font-size: 24px;background-color: white;border: none; color: #0298EC;">Logout
+                        <button class="nav-link"
+                            style="font-size: 24px; background-color: white;border: none; color: #0298EC;">Logout
                         </button>
                     </li>
                 </form>
@@ -56,27 +57,28 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" style="font-size: 24px; color: #0298EC;"
-                                href="/doctor/<%= result.id  %>">Home</a>
+                                href="/doctor/<%= id  %>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Patients/<%= result.id  %>"
+                            <a class="nav-link" href="/doctor/Patients/<%= id  %>"
                                 style="font-size: 24px; color: #0298EC;">Patients List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Appointments/<%= result.id  %> "
+                            <a class="nav-link" href="/doctor/Appointments/<%= id  %> "
                                 style="font-size: 24px; color: #0298EC;">Appointments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Notes/<%= result.id  %> "
+                            <a class="nav-link" href="/doctor/Notes/<%= id  %> "
                                 style="font-size: 24px; color: #0298EC;">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/doctor/Profile/<%= result.id %> "
+                            <a class="nav-link" href="/doctor/Profile/<%= id %> "
                                 style="font-size: 24px; color: #0298EC;">Profile</a>
                         </li>
                         <form action="/doctor/LogOut" method="POST">
                             <li class="nav-item">
-                                <button class="nav-link" style="font-size: 24px;background-color: white;border: none; color: #0298EC;">Logout
+                                <button class="nav-link"
+                                    style="font-size: 24px;background-color: white;border: none; color: #0298EC;">Logout
                                 </button>
                             </li>
                         </form>
@@ -88,22 +90,25 @@
         </div>
     </nav>
 
-    <div class="cont">
-        <h1>List Of Appointments</h1>
+    
+        
         <% const i=result.id %>
             <% if(appointments.length> 0){ %>
+                <div class="cont">
+                <h1>List Of Appointments</h1>
                 <%appointments.forEach(appoint=>{ %>
-                    <form action="/doctor/Appointments/<%= result.id%>/<%= appoint.time %> " method="POST">
-                        <div class="Box" id="<%= appoint.time %>">Time :
+                    <form action="/doctor/Appointments/<%= result.id%>/<%= appoint.time %>/<%= appoint.date %>/<%= appoint.name  %>" method="POST">
+                        <div style="margin-left: 0px; max-width: 750px;" class="Box" id="<%= appoint.time %>">Patient:<%= appoint.name %> , Time :
                             <%= appoint.time %>, Date:<%= appoint.date %> <button type="submit"
                                         id="<%=appoint.time %>">Delete/End</button>
                         </div>
                         <hr>
-                        
+
                     </form>
                     <% }) %>
+                </div>
                         <% } %>
-    </div>
+    
 
 
     <!-- <script src="/JS/deleteAppoint.js"></script> -->

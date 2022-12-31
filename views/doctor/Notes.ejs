@@ -91,17 +91,26 @@
 
     <!-- note app -->
     <div id="app">
-        <button class="add-note" type="button">+</button>
-    </div>
+        <form style="display: flexbox;" action="/doctor/saveNote/<%= id %>" method="POST">
+            <textarea name="text" id="note" class="note" cols="60" rows="10"></textarea>
+            <button style="text-align: center; height: 40px; font-size: 24px;" class="add-note" type="submit">Save
+                Note</button>
+        </form>
 
+        <% if(result.notes.length>0){ %>
+            <% result.notes.forEach(note=>{ %>
+                <form style="display: flexbox;" action="/doctor/deleteNote/<%= id %>/<%= note.i %>" method="POST">
+                    <div class="note"> <button
+                            style="position: relative; margin-left: -16px; top:-16px; text-align: center; height: 40px; color: black; font-size: 24px;"
+                            class="add-note" type="submit">Delete Note</button>
+                        <%= note.text %>
+                    </div>
+                </form>
+                <% }) %>
+                    <% } %>
+    </div>
     <!-- not app ends -->
 
-
-
-    <div class="footer1">
-        <footer>Copyright &copy; MA Hospital</footer>
-    </div>
-    <script src="/JS/notebook.js"></script>
 </body>
 
 </html>

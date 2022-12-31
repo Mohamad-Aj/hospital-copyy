@@ -30,14 +30,14 @@ body {
 
 .cont{
     padding-top: 8px;
-    margin-left: 500px;
+    margin-left: 300px;
     /* position: fixed; */
     min-height: 40px;
     align-items: center;
     justify-content: center;
     background-color: rgb(236, 220, 188);
     margin-top: 100px;
-    max-width: 550px;
+    max-width: 800px;
     display: flex;
     /* padding: 150px; */
     white-space: nowrap;

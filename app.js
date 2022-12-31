@@ -62,7 +62,7 @@ db.once("open",function(){
 })
 
 app.get('/',(req,res)=>{
-    session = req.session
+    // session = req.session
     res.render('HomePage')
     res.statusCode = 200;
 })
@@ -82,7 +82,7 @@ app.post('/register', async (req, res) => {
     db.collection('users').insertOne({
         fullname: req.body.fullname,
         birthdate: req.body.birthdate,
-        email: req.body.email,
+        email: req.body.email.toLowerCase(),
         password: hashedPassword,
         ID: req.body.id1,
         phonenumber: req.body.phonenumber,
@@ -90,18 +90,19 @@ app.post('/register', async (req, res) => {
         JID: "/",
         notes:[],
         appointments:[],
-        patients:[]
+        patients:[],
+        OrderedCard:false
     })
     Doctor.findOne({IDS:req.body.id1})
     .then((result)=>{
         if(result){
-        db.collection('alldoctors').insertOne({Name:req.body.fullname, email:req.body.email})
+        db.collection('alldoctors').insertOne({Name:req.body.fullname, email:req.body.email.toLowerCase()})
     }
     })
     Nurse.findOne({PDS:req.body.id1})
     .then((result1)=>{
         if(result1){
-        db.collection('alldoctors').insertOne({Name:req.body.fullname,email:req.body.email})
+        db.collection('alldoctors').insertOne({Name:req.body.fullname,email:req.body.email.toLowerCase()})
     }
     })
     res.redirect('/HomePage');
@@ -112,10 +113,10 @@ app.post('/forgetpassword', async (req, res) => {
     if(req.body.password != req.body.confirm){
         res.redirect('/forgetpassword')
     }
-    db.collection('users').findOne({email: req.body.email})
+    db.collection('users').findOne({email: req.body.email.toLowerCase()})
     .then((user)=>{
         if(user){
-            db.collection('users').updateOne({email:req.body.email},{
+            db.collection('users').updateOne({email:req.body.email.toLowerCase()},{
                 $set:{
                     password:hashedPassword
                 }
