@@ -95,6 +95,18 @@ router.get('/Patients/:id', async (req, res) => {
     }
 })
 
+router.get('/Guide/:id', (req, res) => {
+    if (session) {
+        const id = req.params.id;
+        User.findById(id)
+            .then(result => {
+                if (result) res.render('nurse/Guide', { id:id,result: result })
+            })
+    } else {
+        res.redirect('/HomePage')
+    }
+})
+
 router.get('/Lab/:id', async (req, res) => {
     if (session) {
         const id = req.params.id;

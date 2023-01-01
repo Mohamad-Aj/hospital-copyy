@@ -24,10 +24,10 @@
                         href="/doctor/Index/<%= id  %>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
+                    <a class="nav-link" href="/doctor/About<%= id %> " style="font-size: 24px; color: #0298EC;">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
+                    <a class="nav-link" href="/doctor/Guide/<%= id %> " style="font-size: 24px; color: #0298EC;">Guide</a>
                 </li>
                 <form action="/doctor/LogOut" method="POST">
                     <li class="nav-item">
@@ -106,7 +106,7 @@
                         height="130" width="130" alt=""></a><br>
                 <h2>Notes</h2>
             </button></div>
-        <div class="boxs box5"><button id="guide"><a href="/Guide"><img src="/images/user-guide.png" height="130"
+        <div class="boxs box5"><button id="guide"><a href="/doctor/Guide/<%= id %> "><img src="/images/user-guide.png" height="130"
                         width="130" alt=""></a><br>
                 <h2>Guide</h2>
         </div>

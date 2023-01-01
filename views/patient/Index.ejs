@@ -13,10 +13,6 @@
   <!-- favicon icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
-
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,6 +75,10 @@
         <li class="nav-item">
           <a class="nav-link" href="/patient/Lab/<%= result.id %> "
             style="font-size: 18px; margin-top:6px; color: #0298EC;">Lab Results</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/patient/About/<%= result.id %> "
+            style="font-size: 18px; margin-top:6px; color: #0298EC;">About</a>
         </li>
         <form action="/patient/LogOut" method="POST">
           <li class="nav-item">

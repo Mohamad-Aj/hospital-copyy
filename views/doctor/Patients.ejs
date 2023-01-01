@@ -35,10 +35,12 @@
                             href="/doctor/Index/<%= id  %>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
+                        <a class="nav-link" href="/doctor/About<%= id %> "
+                            style="font-size: 24px; color: #0298EC;">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
+                        <a class="nav-link" href="/doctor/Guide/<%= id %> "
+                            style="font-size: 24px; color: #0298EC;">Guide</a>
                     </li>
                     <form action="/doctor/LogOut" method="POST">
                         <li class="nav-item">
@@ -104,7 +106,8 @@
             <% if(patients.length> 0){ %>
                 <%patients.forEach(patient=>{ %>
                     <form action="/doctor/patients/<%= result.id%>/<%=patient[0]%>  " method="POST">
-                        <div class="Box" style="margin-left:14px;">Name : <%= patient[0] %>, Age:<%= patient[1] %>, ID: <%= patient[2] %>
+                        <div class="Box" style="margin-left:14px;">Name : <%= patient[0] %>, Age:<%= patient[1] %>, ID:
+                                    <%= patient[2] %>
                         </div>
                         <hr>
                     </form>

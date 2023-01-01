@@ -49,6 +49,9 @@ const UserSchema = new mongoose.Schema({
     },
     OrderedCard:{
         type:Boolean
+    },
+    code:{
+        type:String
     }
 }, { timestamps: true });
 

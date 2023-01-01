@@ -126,12 +126,16 @@
       </section>
     </section>
     <% if(result.appointments.length> 0){ %>
-      <div class="wrapper" style="margin-left: 10px; min-width: 520px;">
+      <div class="wrapper" style="display: inline-block; margin-left: 10px; min-width: 520px;">
         Upcoming Appointments: <br>
         <% result.appointments.forEach(appoint=>{%>
-          Time:<%= appoint.time %>, Date:<%= appoint.date %>, Reponsible: <%= appoint.name %> <br>
-                <%}) %>
-                  <% } %>
+          <form action="/patient/deleteAppoint/<%= result.id %>/<%= appoint.time %>/<%= appoint.date %>/<%= appoint.name %>" method="POST">
+            Time:<%= appoint.time %>, Date:<%= appoint.date %>, Reponsible: <%= appoint.name %> 
+            <button
+                    style="height: 40px; width: 100px;" type="submit" id="<%=appoint.time %>">Cancel</button></form>
+          <br>
+          <%}) %>
+            <% } %>
       </div>
 
       <% if(apps.length> 0){ %>

@@ -379,6 +379,26 @@ router.route('/Appointments/:id/:patname').post(async (req, res) => {
 
 })
 
+
+router.route('/deleteAppoint/:id/:time/:date/:docname').post(async (req, res) => {
+    const time = req.params.time;
+    const id = req.params.id;
+    const date = req.params.date;
+    const docname = req.params.docname;
+    console.log(id);
+    User.findById(id)
+        .then(async (result) => {
+            if (result) {
+                console.log(time)
+                await db.collection('users').updateOne({ fullname: result.fullname }, { $pull: { "appointments": { name: docname, date: date, time: time } } })
+                db.collection('users').updateOne({ fullname: docname }, { $pull: { "appointments": { name: result.fullname, date: date, time: time } } })
+                db.collection('allappoints').deleteOne({ name: docname, time: time, date: date })
+                res.redirect(req.get('referer'));
+
+            }
+        })
+})
+
 router.route('/Profile/:id').put(async (req, res) => {
     console.log('im here here')
     const email = req.body.email.toLowerCase();

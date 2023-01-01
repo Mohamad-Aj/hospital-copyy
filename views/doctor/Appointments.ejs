@@ -26,10 +26,12 @@
                         href="/doctor/Index/<%= id  %>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/About" style="font-size: 24px; color: #0298EC;">About</a>
+                    <a class="nav-link" href="/doctor/About<%= id %> "
+                        style="font-size: 24px; color: #0298EC;">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/Guide" style="font-size: 24px; color: #0298EC;">Guide</a>
+                    <a class="nav-link" href="/doctor/Guide/<%= id %> "
+                        style="font-size: 24px; color: #0298EC;">Guide</a>
                 </li>
                 <form action="/doctor/LogOut" method="POST">
                     <li class="nav-item">
@@ -90,28 +92,30 @@
         </div>
     </nav>
 
-    
-        
-        <% const i=result.id %>
-            <% if(appointments.length> 0){ %>
-                <div class="cont">
+
+    <% const i=result.id %>
+        <% if(appointments.length> 0){ %>
+            <div class="cont">
                 <h1>List Of Appointments</h1>
                 <%appointments.forEach(appoint=>{ %>
-                    <form action="/doctor/Appointments/<%= result.id%>/<%= appoint.time %>/<%= appoint.date %>/<%= appoint.name  %>" method="POST">
-                        <div style="margin-left: 0px; max-width: 750px;" class="Box" id="<%= appoint.time %>">Patient:<%= appoint.name %> , Time :
-                            <%= appoint.time %>, Date:<%= appoint.date %> <button type="submit"
-                                        id="<%=appoint.time %>">Delete/End</button>
+                    <form
+                        action="/doctor/Appointments/<%= result.id%>/<%= appoint.time %>/<%= appoint.date %>/<%= appoint.name  %>"
+                        method="POST">
+                        <div style="margin-left: 0px; max-width: 750px;" class="Box" id="<%= appoint.time %>">Patient:
+                            <%= appoint.name %> , Time :
+                                <%= appoint.time %>, Date:<%= appoint.date %> <button type="submit"
+                                            id="<%=appoint.time %>">Delete/End</button>
                         </div>
                         <hr>
 
                     </form>
                     <% }) %>
-                </div>
-                        <% } %>
-    
+            </div>
+            <% } %>
 
 
-    <!-- <script src="/JS/deleteAppoint.js"></script> -->
+
+                <!-- <script src="/JS/deleteAppoint.js"></script> -->
 </body>
 
 </html>
