@@ -259,6 +259,11 @@ router.route('/Appointments/:id/:patname').post(async (req, res) => {
                         })
                     }
                     if (a.length >= 0) {
+                        r.appointments.forEach(appo1=>{
+                            if(appo1.time === New_Appointment1.time && appo1.date === New_Appointment1.date){
+                                flag2 = 2;
+                            }
+                        })
                         if (flag2 === 0) {
                             console.log('the flag2 didnt change')
                             db.collection('users').updateOne({ fullname: r.fullname }, {
@@ -319,7 +324,7 @@ router.route('/Appointments/:id/:patname').post(async (req, res) => {
                                         if (appo.time === New_Appointment.time && appo.date === New_Appointment.date)
                                             flag1 = 1
                                     })
-                                    if (flag1 === 0) {
+                                    if (flag1 === 0 && flag2===0) {
                                         db.collection('users').updateOne({ fullname: user.fullname }, {
                                             $push: {
                                                 appointments: New_Appointment
